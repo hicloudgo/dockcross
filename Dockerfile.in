@@ -1,4 +1,4 @@
-FROM debian:jessie-20181112
+FROM debian:stretch
 MAINTAINER Matt McCormick "matt.mccormick@kitware.com"
 
 #include "common.debian"
