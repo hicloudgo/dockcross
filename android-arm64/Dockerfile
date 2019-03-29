@@ -1,4 +1,4 @@
-FROM dockcross/base:latest
+FROM pylam/base:latest
 MAINTAINER Matt McCormick "matt.mccormick@kitware.com"
 RUN \
   sed -i '/debian-security/d' /etc/apt/sources.list && \

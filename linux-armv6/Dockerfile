@@ -1,4 +1,4 @@
-FROM dockcross/base:latest
+FROM pylam/base:latest
 MAINTAINER Matt McCormick "matt.mccormick@kitware.com"
 
 # Enable 32 bits binaries
