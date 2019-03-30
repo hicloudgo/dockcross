@@ -1,0 +1,11 @@
+language: C
+services:
+  - docker
+git:
+  depth: 3
+  quiet: true
+branches:
+  only:
+  - master
+#https://stackoverflow.com/questions/33342663/how-to-properly-setup-travisci-for-a-simple-c-project
+script: make
