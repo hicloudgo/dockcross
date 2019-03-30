@@ -8,4 +8,4 @@ branches:
   only:
   - master
 #https://stackoverflow.com/questions/33342663/how-to-properly-setup-travisci-for-a-simple-c-project
-script: make
+script: make base
