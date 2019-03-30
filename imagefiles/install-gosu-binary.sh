@@ -38,7 +38,7 @@ curl -o /usr/local/bin/gosu.asc -# -SL $url_key
 gpg --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu
 
 # cleanup
-rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc
+rm -fr "$GNUPGHOME" /usr/local/bin/gosu.asc
 
 chmod +x /usr/local/bin/gosu
 
