@@ -35,7 +35,7 @@ gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys B42F6819007F00F88
 gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu
 
 # cleanup
-rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc
+rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc ~/.gnupg
 
 chmod +x /usr/local/bin/gosu
 
