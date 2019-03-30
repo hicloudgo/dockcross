@@ -21,6 +21,11 @@ url_key="https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-$
 # download and verify the signature
 export GNUPGHOME="$(mktemp -d)"
 
+gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 \\
+gpg --keyserver hkp://pool.sks-keyservers.net:80 --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 || \\
+gpg --keyserver hkp://pgp.key-server.io:80 --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 || \
+gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4
+
 echo "Downloading $url"
 curl -o /usr/local/bin/gosu -# -SL $url
 
@@ -30,9 +35,7 @@ curl -o /usr/local/bin/gosu.asc -# -SL $url_key
 mkdir ~/.gnupg
 echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf
 
-gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4
-
-gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu
+gpg --verify /usr/local/bin/gosu
 
 # cleanup
 rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc ~/.gnupg
