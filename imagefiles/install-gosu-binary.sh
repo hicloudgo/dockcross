@@ -32,10 +32,10 @@ curl -o /usr/local/bin/gosu -# -SL $url
 echo "Downloading $url_key"
 curl -o /usr/local/bin/gosu.asc -# -SL $url_key
 
-mkdir ~/.gnupg
-echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf
+#mkdir ~/.gnupg
+#echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf
 
-gpg --verify /usr/local/bin/gosu
+gpg --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu
 
 # cleanup
 rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc ~/.gnupg
