@@ -8,6 +8,11 @@ branches:
   only:
   - master
 script: make base
+deploy:
+  provider: script
+  script: bash docker_push.sh
+  on:
+    branch: master
 env:
   matrix:
   - secure: FC9WA5qtF8WHaF7TJTCIbuTwby/FF8/1t1EZA7oMJ4tKxgIILQ5Z7Sq3PL3BITdnkB6zijK4lQSJObxrfWo9X3rHEGgoa6tmvfnDc5a9uTAIXfqchZ1fluSFF8stgbJbV7vLmDQ1R+orNZ0rjNWvpbTV/MoBrNnuGfN/jbHqhCJafFr2pgY9H/tP2p5VvbWbyeBYkz7HncW6CCGxKFaTQUr0JI8pYibIDIGfJeXxAvZ7WDu9Wv0E15ukULywIiN+9mhMYNyGAFBeuZW+SBWRWFw6JIlDMSS5NaNacVlTxAwTR1rXXg6FceYdMa47fVhCYEJsXcsiXyRv4ZmNFvsY50tl67MDiPald/tJGWxafxRX6SiE4eD0bA/BcFrpk4n3rWXB3sF7II0M3ohwFt33jkGlw8Yt3GwbMDDTJTZMktzPGE3oMg+gGMMoeWyU4Qp1/DgRCcnoNo7YoPGYuVpsXp+L2RjNy8NmWUAlxjFGxnOjIveB9bImpXX/RBNiwE26WuxvDjz1sy/RzBFXzFfKzqKJQh3PFmZ7V+JuGUfCz0rcyMaVIwAFNIZYgDIuri0P0XQnPfXfEzH+bfVZ7Ocr0oBAwg31LI1qHOLPQDW4dLceDOPOMciotdf5joipW/46t1+spDqqX9JZhqa8UcK/0TqTGQ/WBgP1l4ncdOQrLzk=
